@@ -1,0 +1,68 @@
+server:
+  port: 8787
+
+spring:
+  application:
+    name: ddddd  #微服务的名称
+    profiles:
+#      active:
+
+
+
+###########################################################################################
+## FREEMARKER (FreeMarkerAutoConfiguration)
+###########################################################################################
+  freemarker:
+    cache: true    #关闭缓存，及时刷新，上线生产环境需要修改为true
+    allow-request-override: false
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html; charset=utf-8
+    #DEFAULT_TEMPLATE_LOADER_PATH
+#    prefix: templates      #前缀(templates)
+#    suffix: .ftl  #后缀(ftl)
+#    check-template-location=true
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    template-loader-path: classpath:/templates   #设定ftl文件路径(可以以数组形式设置多个)
+
+
+  ########################################################
+  ### Redis配置
+  ### Redis必须有,默认会连接127.0.0.1:6379,如果设置了其他则覆盖默认
+  ########################################################
+  redis:
+    database: 0         # 连接工厂使用的数据库索引。
+#    cluster:
+      #      max-redirects: 2   # （普通集群，不使用则不用开启）在群集中执行命令时要遵循的最大重定向数目。
+      # （普通集群，不使用则不用开启）以逗号分隔的“主机：端口”对列表进行引导。
+#      nodes: 10.0.0.5:6379,10.0.0.7:6379
+    # 连接URL，将覆盖主机，端口和密码（用户将被忽略），例如：redis://user:password@example.com:6379
+    #    url:
+    host: 132.232.176.112       # Redis服务器主机。
+    password: redis_password_hello            # 登录redis服务器的密码。
+#    ssl: false            # 启用SSL支持。
+    port: 6377            # Redis服务器端口。
+#    timeout: 0            # 以毫秒为单位的连接超时。
+#    jedis:
+#      pool:
+#        max-active: 10    # 池在给定时间可以分配的最大连接数。使用负值无限制。
+#        max-idle: 10      # 池中“空闲”连接的最大数量。使用负值表示无限数量的空闲连接。
+#        max-wait: -1      # 连接分配在池被耗尽时抛出异常之前应该阻塞的最长时间量（以毫秒为单位）。使用负值可以无限期地阻止。
+#        min-idle: 0       # 目标为保持在池中的最小空闲连接数。这个设置只有在正面的情况下才有效果。
+#    sentinel:
+#      master:             # （哨兵模式，不使用则不用开启）Redis服务器的名称。
+#      nodes:              # （哨兵模式，不使用则不用开启）主机：端口对的逗号分隔列表。
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://laeni:...@132.232.176.112:6000/eureka/,http://laeni:...@111.231.252.250:6000/eureka/
+  instance:
+#    ipAddress: 132.232.176.112   #本机IP地址
+#    preferIpAddress: true        #设置了本机IP后取消注释
+    #    non-secure-port-enabled: false
+    #    secure-port-enabled: true
+    #    hostname: ${vcap.application.uris[0]}
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}

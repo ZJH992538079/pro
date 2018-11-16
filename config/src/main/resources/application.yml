@@ -1,0 +1,14 @@
+server:
+  port: 6001
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: dev
+
+#服务注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://laeni:...@132.232.176.112:6000/eureka/,http://laeni:...@111.231.252.250:6000/eureka/

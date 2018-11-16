@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          #服务的git仓库地址(可以是本地路径,即file://开头,windows中绝对地址为:file:///)
+#          uri: https://gitee.com/laeni/config.git
+          uri: file:///D:\Desktop\defaultDesktop\config
+          #配置文件所在的目录
+          searchPaths: /*
+          #仓库用户名密码
+          #username: 617935310@qq.com
+          #password: mjkl5556
+          #指定git下来的配置文件存放地址(一般使默认就好,这里只是为了测试)
+          basedir: D:\Desktop\defaultDesktop\config\target
+          #有一个强制拉属性，如果本地副本是脏的，它将使Spring Cloud配置服务器从远程存储库中强制pull(可省略)
+          force-pull: true
+      #配置文件所在的分支
+      label: master
+
+# Eureka
+eureka:
+  instance:
+    ipAddress: 127.0.0.1
+    preferIpAddress: true
+    #    non-secure-port-enabled: false
+    #    secure-port-enabled: true
+    #    hostname: ${vcap.application.uris[0]}
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 引入配置文件 -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:config.properties"/>
+    </bean>
+
+    <!-- 引入其他配置文件 -->
+    <import resource="classpath:applicationContext-other.xml"/>
+    <import resource="classpath:applicationContext-mybatis.xml"/>
+
+    <!-- MVC文件上传 -->
+    <!--<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        &lt;!&ndash; 指定上传的文件的最大值(单位字节,1KB=1024字节),-1表示不受限制 &ndash;&gt;
+        <property name="maxUploadSize" value="-1"/>
+    </bean>
+-->
+</beans>

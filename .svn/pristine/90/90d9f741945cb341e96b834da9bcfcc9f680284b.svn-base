@@ -1,0 +1,4 @@
+#url=jdbc:mysql://192.168.2.103/project1?useUnicode=true&characterEncoding=utf-8&useSSL=false
+url=jdbc:mysql://sql.laeni.cn/project1?useUnicode=true&characterEncoding=utf-8&useSSL=false
+username=pro
+password=pro

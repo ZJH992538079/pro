@@ -1,0 +1,167 @@
+/* 重写SUI样式 */
+.sui-progress {
+	margin-bottom: 0;
+}
+
+
+/* 重写Bootstrap样式 */
+.dropdown {
+	display: inline;
+}
+
+.dropdown-menu {
+	/* display: block; */
+	margin: 0.8rem 0 0;
+}
+
+/* 自定义样式 */
+#content-nav {
+	margin-left: 0;
+}
+
+#content-nav-1 {
+	margin: 0px 15px;
+	padding: 10px 0;
+}
+
+#sidebar-nav {
+	width: 380px;
+	top: 10px;
+}
+
+#sidebar_left {
+	width: 236px;
+}
+
+#sidebar {
+	margin: 20px;
+}
+
+#content_right {
+	background-color: #FFF;
+	margin-left: 236px;
+	height: 100%;
+}
+
+#space_title {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 32px;
+	padding-left: 5px;
+}
+
+#space_num {
+	float: right;
+	font-size: 15px;
+	padding-right: 5px;
+}
+
+#sidebar_left ul li a {
+	font-size: 18px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+/* 文件导航栏 */
+#show-type:active .dropdown-menu,	/*活动元素*/
+#show-type:focus .dropdown-menu,	/*具有焦点的元素*/
+#show-type:hover .dropdown-menu {
+	display: block;
+}
+
+
+.file:active .file-menu,	/*活动元素*/
+.file:focus .file-menu,	/*具有焦点的元素*/
+.file:hover .file-menu {
+	display: block;
+}
+
+.file-menu:active .file-menu-list,	/*活动元素*/
+.file-menu:focus .file-menu-list,	/*具有焦点的元素*/
+.file-menu:hover .file-menu-list {
+	display: block;
+}
+
+/* 路径选择 */
+#path>div {
+	float: left;
+	margin: 0 10px;
+}
+
+#path button {
+	padding: 0;
+	border: 0;
+}
+
+/* 具体文件内容 */
+#pan_value {
+	float: left;
+	/* background-color: antiquewhite; */
+	/* height: 215px; */
+	width: 100%;
+}
+
+.file {
+	/* background-color: aliceblue; */
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin: 10px;
+}
+
+.file .file-ico {
+	font-size: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.file .file-title {
+	text-align: center;
+	line-height: 21px;
+}
+
+.file .file-val {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+}
+
+/* 操作菜单列表 */
+.file .file-menu-list {
+    background-color: rgba(168, 168, 168, 0.8);
+    color: #0a4dd4;
+    font-weight: bold;
+    top: -84px;
+    left: -76px;
+    width: 100px;
+    height: 100px;
+}
+
+.file .file-menu-list ul li a {
+	padding: 0;
+	line-height: 16px;
+	text-align: center;
+}
+
+/* 操作菜单 */
+.file .file-menu {
+	height: 12px;
+	width: 22px;
+	background-color: #a9a9a9a6;
+	border-radius: 2px;
+	margin-top: 85px;
+	margin-left: 76px;
+	cursor: pointer;
+	display: none;
+}
+
+.file .file-menu span {
+    width: 7px;
+    height: 7px;
+    background-color: #6b6b6b;
+    display: block;
+    border-radius: 50%;
+    float: left;
+    margin: 2px;
+	/* 透明度 */
+	opacity: 0.5;
+}

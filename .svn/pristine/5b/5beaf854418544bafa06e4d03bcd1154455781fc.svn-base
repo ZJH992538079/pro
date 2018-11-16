@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/laeni/config.git
+          searchPaths: /*
+          force-pull: true
+      label: master
+
+# Eureka
+eureka:
+  instance:
+    ipAddress: 132.232.176.112
+    preferIpAddress: true
+    #    non-secure-port-enabled: false
+    #    secure-port-enabled: true
+    #    hostname: ${vcap.application.uris[0]}
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
